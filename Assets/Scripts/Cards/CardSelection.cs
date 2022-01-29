@@ -13,11 +13,15 @@ public class CardSelection : MonoBehaviour
     {
         for (int i = 0; i < CardsToPickFrom; i++)
         {
-            //Card card = DealCard();
+            Card card = CardDeck.instance.DealCard();
+            Debug.Log(card.title);
+
             GameObject cardOption = Instantiate(CardPrefab, transform);
-            //CardFlip cardFlipComponent = cardOption.GetComponentInChildren<CardFlip>();
-            //Image image = cardFlipComponent.cardFace.GetComponent<Image>();
-            //image.sprite = 
+            CardFlip cardFlipComponent = cardOption.GetComponentInChildren<CardFlip>();
+            cardFlipComponent.positiveText = card.positive;
+            cardFlipComponent.negativeText = card.negative;
+            Image image = cardFlipComponent.cardFace.GetComponent<Image>();
+            image.sprite = card.image;
         }
     }
 
