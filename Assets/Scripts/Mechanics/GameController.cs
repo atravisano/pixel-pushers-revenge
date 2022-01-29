@@ -41,6 +41,8 @@ namespace Platformer.Mechanics
         {
             if (CardPickerCanvas)
             {
+                PauseGame();
+
                 CardPickerCanvas.gameObject.SetActive(true);
             }
         }
@@ -50,7 +52,19 @@ namespace Platformer.Mechanics
             if (CardPickerCanvas)
             {
                 CardPickerCanvas.gameObject.SetActive(false);
+
+                ResumeGame();
             }
+        }
+
+        void PauseGame()
+        {
+            Time.timeScale = 0;
+        }
+
+        void ResumeGame()
+        {
+            Time.timeScale = 1;
         }
     }
 }
