@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0be86cb789d0d7f4db048345a86803b7, type: 3}
-  m_Name: Higher Fire
+  m_Name: Higher Fire 1
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Higher Fire
+  description: All your jumps are filled with java, but be warned the the floor is
+    lava.
   image: {fileID: 0}
   collectableMultiplier: 0
   collectableOverTime: 0
-  speed: 0
-  jumpHeight: 0
-  mass: 0
-  otDmg: 0
-  floorDmg: 0
+  speedMultiplier: 0
+  jumpHeight: 2
+  massMultiplier: 0
+  DmgOverTime: 0
+  floorDmg: 10
   fallDmg: 0
-  size: 0
+  sizeMultiplier: 0
