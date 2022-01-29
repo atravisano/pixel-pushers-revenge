@@ -406,10 +406,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861783862865860131, guid: 71557a931de9e1d41a7350bef936c1e0, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 1861783862865860132, guid: 71557a931de9e1d41a7350bef936c1e0, type: 3}
       propertyPath: m_Name
       value: Card Picking Canvas
