@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Platformer.Mechanics;
 using TMPro;
 using UnityEngine;
 
@@ -30,7 +31,6 @@ public class CardFlip : MonoBehaviour
     // Update is called once per frame
     public void Selected()
     {
-        Debug.Log(card);
         if(cardFaceIsActive){
             CardMenu.instance.AddCard(card);
         } else {
