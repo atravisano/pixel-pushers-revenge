@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CardFlip : MonoBehaviour
 {
-    public float Delay = 0.001f;
+    public float Delay = 0.005f;
     public GameObject cardFace;
     public Card card;
 
@@ -59,7 +59,7 @@ public class CardFlip : MonoBehaviour
         int speed = 9;
         for (int deg = 0; deg < 180/speed; deg++)
         {
-            yield return new WaitForSeconds(Delay);
+            yield return new WaitForSecondsRealtime(Delay);
             transform.Rotate(new Vector3(0, speed, 0));
             timer += speed;
 
