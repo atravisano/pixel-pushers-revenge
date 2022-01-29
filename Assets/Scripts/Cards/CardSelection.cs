@@ -20,6 +20,7 @@ public class CardSelection : MonoBehaviour
             CardFlip cardFlipComponent = cardOption.GetComponentInChildren<CardFlip>();
             cardFlipComponent.positiveText = card.positive;
             cardFlipComponent.negativeText = card.negative;
+            cardFlipComponent.card = card;
             Image image = cardFlipComponent.cardFace.GetComponent<Image>();
             image.sprite = card.image;
         }
