@@ -42,13 +42,11 @@ public class CardFlip : MonoBehaviour
     {
         if (cardFaceIsActive)
         {
-            Debug.Log("card face off");
             cardFace.SetActive(false);
             cardFaceIsActive = false;
         }
         else
         {
-            Debug.Log("card face on");
             cardFace.SetActive(true);
             cardFaceIsActive = true;
         }
