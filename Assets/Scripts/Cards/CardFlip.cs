@@ -7,6 +7,7 @@ public class CardFlip : MonoBehaviour
 {
     public float Delay = 0.001f;
     public GameObject cardFace;
+    public Card card;
 
     public string positiveText;
     public string negativeText;
@@ -29,7 +30,12 @@ public class CardFlip : MonoBehaviour
     // Update is called once per frame
     public void Selected()
     {
-        StartCoroutine(CalculateFlip());        
+        Debug.Log(card);
+        if(cardFaceIsActive){
+            CardMenu.instance.AddCard(card);
+        } else {
+            StartCoroutine(CalculateFlip());
+        }
     }
 
     public void Flip()
@@ -50,11 +56,12 @@ public class CardFlip : MonoBehaviour
 
     IEnumerator CalculateFlip()
     {
-        for (int deg = 0; deg < 180; deg++)
+        int speed = 9;
+        for (int deg = 0; deg < 180/speed; deg++)
         {
             yield return new WaitForSeconds(Delay);
-            transform.Rotate(new Vector3(0, 1, 0));
-            timer++;
+            transform.Rotate(new Vector3(0, speed, 0));
+            timer += speed;
 
             if (timer == 90 || timer == -90)
             {
