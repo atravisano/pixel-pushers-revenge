@@ -5,22 +5,24 @@ public class Card : ScriptableObject
 {
 
     public string title;
-    public string description;
+    public string positive;
+    public string negative;
     public Sprite image;
-    public int collectableMultiplier;
-    public int collectableOverTime; // number of collectable automatically gianed over time
-    public int collectableLoss; // Instant
-    public int collectableGain; // Instant
-    public int speedMultiplier;
-    public int jumpHeight;
-    public int massMultiplier;
-    public int DmgOverTime; // number of collectables automatically lost over time
-    public int floorDmg; // number of collectables lost over time wil player is on floor level
-    public int fallDmg; // number of collectables lost when dropping to floor level
-    public int sizeMultiplier; // the player sprites size
+    public float collectableMultiplier;
+    public float collectableOverTime; // number of collectable automatically gianed over time
+    public float collectableLoss; // Instant
+    public float collectableGain; // Instant
+    public float speedMultiplier;
+    public float jumpHeight;
+    public float massMultiplier;
+    public float DmgOverTime; // number of collectables automatically lost over time
+    public float floorDmg; // number of collectables lost over time wil player is on floor level
+    public float fallDmg; // number of collectables lost when dropping to floor level
+    public float sizeMultiplier; // the player sprites size
     public int removeCards;
-
-    public int invincibilityTime;
+    public int addCards;
+    public float invincibilityTime;
+    public bool levelSkip;
 
     
 }
