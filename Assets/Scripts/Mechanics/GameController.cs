@@ -20,6 +20,8 @@ namespace Platformer.Mechanics
         //conveniently configured inside the inspector.
         public PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
+        public Transform CardPickerCanvas;
+
         void OnEnable()
         {
             Instance = this;
@@ -33,6 +35,22 @@ namespace Platformer.Mechanics
         void Update()
         {
             if (Instance == this) Simulation.Tick();
+        }
+
+        public void PickCard()
+        {
+            if (CardPickerCanvas)
+            {
+                CardPickerCanvas.gameObject.SetActive(true);
+            }
+        }
+
+        public void ClosePickCard()
+        {
+            if (CardPickerCanvas)
+            {
+                CardPickerCanvas.gameObject.SetActive(false);
+            }
         }
     }
 }
