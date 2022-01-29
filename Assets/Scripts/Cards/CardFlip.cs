@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CardFlip : MonoBehaviour
 {
     public float Delay = 0.001f;
     public GameObject cardFace;
+
+    public string positiveText;
+    public string negativeText;
+
+    public TextMeshProUGUI positiveTextElement;
+    public TextMeshProUGUI negativeTextElement;
+
     public bool cardFaceIsActive;
     
     public int timer;
@@ -14,6 +22,8 @@ public class CardFlip : MonoBehaviour
     void Start()
     {
         cardFaceIsActive = false;
+        positiveTextElement.text = positiveText;
+        negativeTextElement.text = negativeText;
     }
 
     // Update is called once per frame
