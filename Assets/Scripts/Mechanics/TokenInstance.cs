@@ -29,6 +29,7 @@ namespace Platformer.Mechanics
         //active frame in animation, updated by the controller.
         internal int frame = 0;
         internal bool collected = false;
+        private ScoreManager _scoreManager;
 
         void Awake()
         {
@@ -36,6 +37,7 @@ namespace Platformer.Mechanics
             if (randomAnimationStartTime)
                 frame = Random.Range(0, sprites.Length);
             sprites = idleAnimation;
+            _scoreManager = UnityEngine.Object.FindObjectOfType<ScoreManager>();
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +59,7 @@ namespace Platformer.Mechanics
             var ev = Schedule<PlayerTokenCollision>();
             ev.token = this;
             ev.player = player;
+            _scoreManager.AddScore(10);
         }
     }
 }
