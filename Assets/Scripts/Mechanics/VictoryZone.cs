@@ -24,7 +24,7 @@ namespace Platformer.Mechanics
                 // var ev = Schedule<PlayerEnteredVictoryZone>();
                 // ev.victoryZone = this;
                 var gameController = UnityEngine.Object.FindObjectOfType<GameController>();
-                SceneManager.LoadScene("Anthony", LoadSceneMode.Single);
+                SceneManager.LoadScene(1, LoadSceneMode.Single);
             }
             if (player != null && score < CoinsRequired)
             {
