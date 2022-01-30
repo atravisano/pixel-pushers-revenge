@@ -19,6 +19,7 @@ namespace Platformer.Mechanics
             var player = collider.gameObject.GetComponent<PlayerController>();
             var scoreManager = UnityEngine.Object.FindObjectOfType<ScoreManager>();
             var score = scoreManager.GetScore();
+            Debug.Log(score >= CoinsRequired);
             if (player != null && score >= CoinsRequired)
             {
                 // var ev = Schedule<PlayerEnteredVictoryZone>();
@@ -37,7 +38,7 @@ namespace Platformer.Mechanics
         private IEnumerator GameOver()
         {
             yield return new WaitForSeconds(0.25f);
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("RetryScreen");
         }
     }
 }
