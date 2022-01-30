@@ -1,3 +1,4 @@
+using Platformer.Mechanics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,18 @@ public class MainMenu : MonoBehaviour
 {
     GameObject backgroundFader;
     GameObject backgroundAudio;
+
+    void OnEnable()
+    {
+        var player = FindObjectOfType<PlayerController>();
+        if (player == null)
+        {
+            return;
+        }
+
+        Destroy(player.gameObject);
+    }
+
     void Start(){
         backgroundFader = GameObject.Find("ImageBackgroundFader");
         backgroundAudio = GameObject.Find("AudioBackground");
