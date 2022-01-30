@@ -836,7 +836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6845689633287939818, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6845689633287939818, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1290,7 +1290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4422257854081723173, guid: d73c7a9c60130f9469608d5e6fec4f25, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4422257854081723173, guid: d73c7a9c60130f9469608d5e6fec4f25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2613,6 +2613,7 @@ MonoBehaviour:
   cardMenuOpen: {fileID: 0}
   cardMenuClose: {fileID: 0}
   cardHolder: {fileID: 0}
+  isWinScreen: 0
   cardPrefab: {fileID: 0}
 --- !u!114 &2075872031
 MonoBehaviour:

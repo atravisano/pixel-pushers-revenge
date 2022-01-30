@@ -11,6 +11,7 @@ public class CardMenu : MonoBehaviour
     public GameObject cardMenuOpen;
     public GameObject cardMenuClose;
     public GameObject cardHolder;
+    public bool isWinScreen;
 
     public GameObject cardPrefab;
 
@@ -24,6 +25,9 @@ public class CardMenu : MonoBehaviour
 
     void Start()
     {
+        if(isWinScreen){
+            ShowCards();
+        }        
     }
 
     public void ResetInventory()
@@ -66,9 +70,10 @@ public class CardMenu : MonoBehaviour
         cardFlipComponent.card = card;
         cardFlipComponent.cardFace.SetActive(true);
 
+        float scale = isWinScreen ? 2f : 2.5f;
         newCard.GetComponentInChildren<Button>().enabled = false;
         newCard.GetComponentInChildren<Image>().enabled = false;
-        newCard.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        newCard.transform.localScale = new Vector3(scale, scale, scale);
         newCard.transform.eulerAngles = new Vector3(0f, 180f, 0f);
     }
 
@@ -82,8 +87,6 @@ public class CardMenu : MonoBehaviour
 
     public void AddCard(Card card)
     {
-        inventory.Add(card);
-
         GameController.Instance.ApplyCard(card);
     }
 

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RetryScreen.unity
     guid: 02bb84bba305ec94fbb758491ee0b4f5
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 7257bf1267a666a469184233d10e85d0
   m_configObjects: {}

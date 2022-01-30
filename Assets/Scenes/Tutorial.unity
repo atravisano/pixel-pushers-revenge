@@ -1255,6 +1255,7 @@ MonoBehaviour:
   cardMenuOpen: {fileID: 464634228}
   cardMenuClose: {fileID: 1503314986}
   cardHolder: {fileID: 1330219121}
+  isWinScreen: 0
   cardPrefab: {fileID: 5125755350170057006, guid: 9465cbe3b39343d4db3babf54600aedf, type: 3}
 --- !u!4 &1493759694 stripped
 Transform:
@@ -7863,7 +7864,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957052665
 GameObject:
@@ -7995,7 +7996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6845689633287939818, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6845689633287939818, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_AnchorMax.x
