@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Platformer.Mechanics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardFlip : MonoBehaviour
 {
@@ -10,30 +11,41 @@ public class CardFlip : MonoBehaviour
     public GameObject cardFace;
     public Card card;
 
-    public string positiveText;
-    public string negativeText;
-
     public TextMeshProUGUI positiveTextElement;
     public TextMeshProUGUI negativeTextElement;
 
     public bool cardFaceIsActive;
-    
+
     public int timer;
 
     // Start is called before the first frame update
     void Start()
     {
         cardFaceIsActive = false;
-        positiveTextElement.text = positiveText;
-        negativeTextElement.text = negativeText;
+
+        if (card != null)
+        {
+            Image image = cardFace.GetComponent<Image>();
+            image.sprite = card.image;
+            positiveTextElement.text = card.positive;
+            negativeTextElement.text = card.negative;
+        }
+        else
+        {
+            Debug.Log("No card scriptable object was defined on this card UI element");
+        }
     }
 
     // Update is called once per frame
     public void Selected()
     {
-        if(cardFaceIsActive){
+        if (cardFaceIsActive)
+        {
             CardMenu.instance.AddCard(card);
-        } else {
+            GameController.Instance.ClosePickCard();
+        }
+        else
+        {
             StartCoroutine(CalculateFlip());
         }
     }
@@ -55,7 +67,7 @@ public class CardFlip : MonoBehaviour
     IEnumerator CalculateFlip()
     {
         int speed = 9;
-        for (int deg = 0; deg < 180/speed; deg++)
+        for (int deg = 0; deg < 180 / speed; deg++)
         {
             yield return new WaitForSecondsRealtime(Delay);
             transform.Rotate(new Vector3(0, speed, 0));

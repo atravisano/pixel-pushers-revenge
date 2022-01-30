@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 1861783863550322812}
   - component: {fileID: 1861783863550322815}
   - component: {fileID: 1861783863550322814}
-  - component: {fileID: 1861783863550322813}
   m_Layer: 5
   m_Name: Card Selection
   m_TagString: Untagged
@@ -203,17 +202,3 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1861783863550322813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861783863550322800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a86e2c53574fb418fc185895086fb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CardPrefab: {fileID: 5125755350170057006, guid: 9465cbe3b39343d4db3babf54600aedf, type: 3}
-  CardsToPickFrom: 3
