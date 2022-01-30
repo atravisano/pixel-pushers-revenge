@@ -26,6 +26,13 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
+            ResetTokens();
+        }
+
+        public void ResetTokens()
+        {
+            FindAllTokensInScene();
+
             //if tokens are empty, find all instances.
             //if tokens are not empty, they've been added at editor time.
             if (tokens.Length == 0)

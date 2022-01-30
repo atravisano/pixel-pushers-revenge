@@ -39,6 +39,17 @@ namespace Platformer.Mechanics
         {
             Instance = this;
 
+            var tokenController = GetComponent<TokenController>();
+            if (tokenController != null)
+            {
+                tokenController.ResetTokens();
+            }
+            else
+            {
+                Debug.Log("Could not find token controller");
+            }
+
+
             var player = FindObjectOfType<PlayerController>();
             if (player == null)
             {
