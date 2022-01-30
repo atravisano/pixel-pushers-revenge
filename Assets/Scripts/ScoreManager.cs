@@ -38,7 +38,13 @@ public class ScoreManager : MonoBehaviour
 
     public void RemoveScore(int score)
     {
-        _score -= Math.Max(_score - score, 0);
+        int decrementBy = Math.Max(score, 0);
+        if (decrementBy > _score)
+        {
+            return;
+        }
+
+        _score -= decrementBy;
     }
 
     public void UpdateScoreText()
