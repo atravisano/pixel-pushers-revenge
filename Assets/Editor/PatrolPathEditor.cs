@@ -17,15 +17,8 @@ namespace Platformer
                 var ep = path.transform.InverseTransformPoint(Handles.PositionHandle(path.transform.TransformPoint(path.endPosition), path.transform.rotation));
                 if (cc.changed)
                 {
-                    if (path.startPosition == new Vector2(sp.x, sp.y))
-                    {
-                        sp.y = ep.y;
-                    }
-                    else
-                    {
-                        ep.y = sp.y;
-                    }
-
+                    sp.y = 0;
+                    ep.y = 0;
                     path.startPosition = sp;
                     path.endPosition = ep;
                 }
