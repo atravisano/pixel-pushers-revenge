@@ -6,19 +6,9 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
-    private int _score = 0;
+    private static int _score = 0;
     [SerializeField]
     private Text _scoreText;
-
-    // void Awake()
-    // {
-    //     if (Instance == null)
-    //     {
-    //         Debug.Log("instance is null");
-    //         DontDestroyOnLoad(gameObject);
-    //         Instance = this;
-    //     }
-    // }
 
     // Start is called before the first frame update
     void Start()

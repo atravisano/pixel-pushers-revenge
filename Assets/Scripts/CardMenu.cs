@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using Platformer.Mechanics;
 
 public class CardMenu : MonoBehaviour
 {
-    GameObject cardMenuBackground;
-    GameObject cardMenuOpen;
-    GameObject cardMenuClose;
-    GameObject cardHolder;
-    Object cardPrefab;
+    public GameObject cardMenuBackground;
+    public GameObject cardMenuOpen;
+    public GameObject cardMenuClose;
+    public GameObject cardHolder;
+
+    public GameObject cardPrefab;
+
     private static List<Card> inventory;
     public static CardMenu instance;
 
@@ -18,20 +21,14 @@ public class CardMenu : MonoBehaviour
     {
         instance = this;
         inventory = new List<Card>();
-        cardPrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Card.prefab", typeof(GameObject));
     }
 
-    void Start(){
-        cardMenuBackground = GameObject.Find("CardMenuBackground");
-        cardMenuOpen = GameObject.Find("CardMenuOpen");
-        cardMenuClose = GameObject.Find("CardMenuClose");
-        cardHolder = GameObject.Find("CardHolder");
-
-        cardMenuBackground.SetActive(false);
-        cardMenuClose.SetActive(false);
+    void Start()
+    {
     }
 
-    void OpenMenu(){
+    public void OpenMenu()
+    {
         Time.timeScale = 0;
         cardMenuBackground.SetActive(true);
         cardMenuOpen.SetActive(false);
@@ -40,7 +37,8 @@ public class CardMenu : MonoBehaviour
         ButtonExit();
     }
 
-    void CloseMenu(){
+    public void CloseMenu()
+    {
         Time.timeScale = 1;
         cardMenuBackground.SetActive(false);
         cardMenuOpen.SetActive(true);
@@ -48,16 +46,19 @@ public class CardMenu : MonoBehaviour
         ButtonExit();
     }
 
-    void ShowCards(){
+    void ShowCards()
+    {
         DestroyCards();
-        for(var i = 0; i < inventory.Count; i++){
-            GameObject newCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity, cardHolder.transform) as GameObject;
+        for (var i = 0; i < inventory.Count; i++)
+        {
+            GameObject newCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity, cardHolder.transform);
             CardFlip cardFlipComponent = newCard.GetComponentInChildren<CardFlip>();
             DisplayCard(newCard, inventory[i], cardFlipComponent);
         }
     }
 
-    void DisplayCard(GameObject newCard, Card card, CardFlip cardFlipComponent){
+    void DisplayCard(GameObject newCard, Card card, CardFlip cardFlipComponent)
+    {
         cardFlipComponent.card = card;
         cardFlipComponent.cardFace.SetActive(true);
 
@@ -67,22 +68,29 @@ public class CardMenu : MonoBehaviour
         newCard.transform.eulerAngles = new Vector3(0f, 180f, 0f);
     }
 
-    void DestroyCards(){
-        foreach (Transform child in cardHolder.transform) {
+    void DestroyCards()
+    {
+        foreach (Transform child in cardHolder.transform)
+        {
             GameObject.Destroy(child.gameObject);
         }
     }
 
-    public void AddCard(Card card){
+    public void AddCard(Card card)
+    {
         inventory.Add(card);
+
+        GameController.Instance.ApplyCard(card);
     }
 
-    public void ButtonEnter(){
+    public void ButtonEnter()
+    {
         cardMenuOpen.transform.position = cardMenuOpen.transform.position + new Vector3(-5f, 0f, 0f);
         cardMenuClose.transform.position = cardMenuClose.transform.position + new Vector3(-5f, 0f, 0f);
     }
 
-    public void ButtonExit(){
+    public void ButtonExit()
+    {
         cardMenuOpen.transform.position = cardMenuOpen.transform.position + new Vector3(5f, 0f, 0f);
         cardMenuClose.transform.position = cardMenuClose.transform.position + new Vector3(5f, 0f, 0f);
     }

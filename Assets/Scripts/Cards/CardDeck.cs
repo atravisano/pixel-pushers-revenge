@@ -28,7 +28,6 @@ public class CardDeck : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     public Card DealCard()
     {
         int i = Random.Range(0, deck.Count);
@@ -37,8 +36,6 @@ public class CardDeck : MonoBehaviour
         
         Debug.Log("Picked " + randomCard.name);
         Debug.Log(deck.Count);
-
-        GameController.Instance.ApplyCard(randomCard);
 
         return randomCard;
     }

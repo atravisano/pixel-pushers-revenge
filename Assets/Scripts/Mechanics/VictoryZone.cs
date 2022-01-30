@@ -24,12 +24,12 @@ namespace Platformer.Mechanics
                 // var ev = Schedule<PlayerEnteredVictoryZone>();
                 // ev.victoryZone = this;
                 var gameController = UnityEngine.Object.FindObjectOfType<GameController>();
+                scoreManager.RemoveScore(CoinsRequired);
                 SceneManager.LoadScene(1, LoadSceneMode.Single);
             }
             if (player != null && score < CoinsRequired)
             {
                 // Game ends when player can't buy next level.
-                Debug.Log("game over");
                 StartCoroutine(GameOver());
             }
         }

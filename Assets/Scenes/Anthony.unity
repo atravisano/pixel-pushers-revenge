@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b7b8893929d4d9094f6655d580fae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinsRequired: 40
+  CoinsRequired: 20
   GameOverScreen: {fileID: 680377373}
 --- !u!212 &191876103
 SpriteRenderer:
@@ -2065,6 +2065,7 @@ MonoBehaviour:
     spawnPoint: {fileID: 2117336917}
     jumpModifier: 1.5
     jumpDeceleration: 0.5
+  CardPickerCanvas: {fileID: 0}
 --- !u!4 &1016843469
 Transform:
   m_ObjectHideFlags: 0

@@ -56,6 +56,16 @@ namespace Platformer.Mechanics
                 var pi = Simulation.Schedule<PlayerInvincibility>();
                 pi.InvincibilityTime = card.invincibilityTime;
             }
+
+            if (card.jumpHeight > 0)
+            {
+                model.player.jumpTakeOffSpeed = card.jumpHeight * model.player.jumpTakeOffSpeed;
+            }
+
+            if (card.speedMultiplier > 0)
+            {
+                model.player.maxSpeed = card.speedMultiplier * model.player.maxSpeed;
+            }
         }
 
         public void PickCard()
