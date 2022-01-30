@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsRequired: 60
-  nextLevelName: 
+  nextLevelName: WinScreen
 --- !u!61 &1110425180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2016,9 +2016,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1750513219540504366, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
+      propertyPath: m_text
+      value: 60 gems to pass
+      objectReference: {fileID: 0}
     - target: {fileID: 4259487362836237321, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_text
-      value: Level 3
+      value: level 3
       objectReference: {fileID: 0}
     - target: {fileID: 6845689633287939818, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_Pivot.x
@@ -2123,7 +2127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4422257854081723173, guid: d73c7a9c60130f9469608d5e6fec4f25, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4422257854081723173, guid: d73c7a9c60130f9469608d5e6fec4f25, type: 3}
       propertyPath: m_LocalPosition.x

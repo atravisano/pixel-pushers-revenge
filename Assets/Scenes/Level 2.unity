@@ -1581,7 +1581,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1750513219540504366, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_text
-      value: 10 Required
+      value: 10 gems to pass
       objectReference: {fileID: 0}
     - target: {fileID: 4259487362836237321, guid: 1bac361f8d66637409e47ec8fa96ec5b, type: 3}
       propertyPath: m_text
@@ -3142,7 +3142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4422257854081723173, guid: d73c7a9c60130f9469608d5e6fec4f25, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4422257854081723173, guid: d73c7a9c60130f9469608d5e6fec4f25, type: 3}
       propertyPath: m_LocalPosition.x
