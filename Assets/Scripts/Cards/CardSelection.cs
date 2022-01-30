@@ -2,34 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Platformer.Mechanics;
 
 public class CardSelection : MonoBehaviour
 {
     public GameObject CardPrefab;
     public int CardsToPickFrom;
+    public Transform CardListElement;
+
+    private bool used = false;
 
     // Start is called before the first frame update
     void Start()
+    {
+    }
+
+    private void DrawCards()
     {
         for (int i = 0; i < CardsToPickFrom; i++)
         {
             Card card = CardDeck.instance.DealCard();
             Debug.Log(card.title);
 
-            GameObject cardOption = Instantiate(CardPrefab, transform);
+            GameObject cardOption = Instantiate(CardPrefab, CardListElement);
             CardFlip cardFlipComponent = cardOption.GetComponentInChildren<CardFlip>();
-            cardFlipComponent.positiveText = card.positive;
-            cardFlipComponent.negativeText = card.negative;
             cardFlipComponent.card = card;
-            Image image = cardFlipComponent.cardFace.GetComponent<Image>();
-            image.sprite = card.image;
         }
     }
 
-    //private Card DealCard()
-    //{
-    //    .return 
-    //}
+    private void ResetCards()
+    {
+        for (int i = 0; i < CardListElement.childCount; i++)
+        {
+            Destroy(CardListElement.GetChild(i).gameObject);
+        }
+    }
+
+    void OnEnable()
+    {
+        if (used)
+        {
+            gameObject.SetActive(false);
+            GameController.Instance.ClosePickCard();
+            return;
+        }
+
+        DrawCards();
+        used = true;
+    }
+
+    private void OnDisable()
+    {
+        ResetCards();
+    }
 
     // Update is called once per frame
     void Update()

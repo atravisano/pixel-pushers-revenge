@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class CardMenu : MonoBehaviour
 {
@@ -33,24 +34,42 @@ public class CardMenu : MonoBehaviour
     }
 
     void OpenMenu(){
+        Time.timeScale = 0;
         cardMenuBackground.SetActive(true);
         cardMenuOpen.SetActive(false);
         cardMenuClose.SetActive(true);
-        showCards();
+        ShowCards();
     }
 
     void CloseMenu(){
+        Time.timeScale = 1;
         cardMenuBackground.SetActive(false);
         cardMenuOpen.SetActive(true);
         cardMenuClose.SetActive(false);
     }
 
-    void showCards(){
-        Debug.Log("show cards");
-        for(var i = 0; i <= inventory.Count; i++){
-            Object prefab = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-            //prefab.GetComponent<CardFlip>();
-            //prefab.card = inventory[i];
+    void ShowCards(){
+        DestroyCards();
+        for(var i = 0; i < inventory.Count; i++){
+            GameObject newCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity, cardHolder.transform) as GameObject;
+            CardFlip cardFlipComponent = newCard.GetComponentInChildren<CardFlip>();
+            DisplayCard(newCard, inventory[i], cardFlipComponent);
+        }
+    }
+
+    void DisplayCard(GameObject newCard, Card card, CardFlip cardFlipComponent){
+        cardFlipComponent.card = card;
+        cardFlipComponent.cardFace.SetActive(true);
+        
+        newCard.GetComponentInChildren<Button>().enabled = false;
+        newCard.GetComponentInChildren<Image>().enabled = false;
+        newCard.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        newCard.transform.eulerAngles = new Vector3(0f, 180f, 0f);
+    }
+
+    void DestroyCards(){
+        foreach (Transform child in cardHolder.transform) {
+            GameObject.Destroy(child.gameObject);
         }
     }
 
