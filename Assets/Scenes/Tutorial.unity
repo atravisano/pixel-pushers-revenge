@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsRequired: 10
-  nextLevelName: WinScreen
+  nextLevelName: Level 1
 --- !u!61 &635941319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -942,6 +942,10 @@ PrefabInstance:
     - target: {fileID: 1098170504627422961, guid: e4e683d74f8789746a35dfe738d89877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098170504627422964, guid: e4e683d74f8789746a35dfe738d89877, type: 3}
+      propertyPath: maxHP
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1098170504627422974, guid: e4e683d74f8789746a35dfe738d89877, type: 3}
       propertyPath: m_Name

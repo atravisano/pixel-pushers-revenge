@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,6 +11,20 @@ public class ScoreManager : MonoBehaviour
     private static int _score = 0;
     [SerializeField]
     private TextMeshProUGUI _scoreText;
+    
+    [SerializeField]
+    private Image _healthBar;
+
+    [SerializeField]
+    private static Sprite _fullHealth;
+    [SerializeField]
+    private Sprite _halfHealth;
+    [SerializeField]
+    private Sprite _lowHealth;
+    [SerializeField]
+    private Sprite _noHealth;
+    private static Sprite _currentHealth = _fullHealth;
+
 
     void Awake()
     {
@@ -26,6 +41,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         UpdateScoreText();
+        _healthBar.overrideSprite = _currentHealth;
     }
 
     public int GetScore() => _score;
@@ -55,5 +71,32 @@ public class ScoreManager : MonoBehaviour
     public void ResetScore()
     {
         _score = 0;
+    }
+
+    public void UpdatePlayerHealth(int health)
+    {
+        switch (health)
+        {
+            case 3:
+              _currentHealth = _fullHealth;
+              break;
+            
+            case 2:
+              _currentHealth = _halfHealth;
+              break;
+            
+            case 1:
+              _currentHealth = _lowHealth;
+              break;
+            
+            case 0:
+              _currentHealth = _noHealth;
+              break;
+        }
+    }
+
+    public void RestoreHealth()
+    {
+        _currentHealth = _fullHealth;
     }
 }
