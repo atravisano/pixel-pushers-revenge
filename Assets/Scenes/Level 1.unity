@@ -15743,7 +15743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsRequired: 0
-  GameOverScreen: {fileID: 0}
+  nextLevelName: Level 2
 --- !u!61 &1110425180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17750,6 +17750,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e44b32c89ba9a4dabd3d67a406eb15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardMenuBackground: {fileID: 0}
+  cardMenuOpen: {fileID: 0}
+  cardMenuClose: {fileID: 0}
+  cardHolder: {fileID: 0}
+  cardPrefab: {fileID: 0}
 --- !u!114 &2075872031
 MonoBehaviour:
   m_ObjectHideFlags: 0

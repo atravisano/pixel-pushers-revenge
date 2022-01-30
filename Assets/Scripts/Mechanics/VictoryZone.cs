@@ -12,6 +12,7 @@ namespace Platformer.Mechanics
     public class VictoryZone : MonoBehaviour
     {
         public int CoinsRequired;
+        public string nextLevelName;
 
         void OnTriggerEnter2D(Collider2D collider)
         {
@@ -36,7 +37,7 @@ namespace Platformer.Mechanics
         private IEnumerator GameOver()
         {
             yield return new WaitForSeconds(0.25f);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(nextLevelName);
         }
     }
 }
