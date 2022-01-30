@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using UnityEngine;
 using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
@@ -17,6 +19,7 @@ namespace Platformer.Mechanics
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
+        public AudioClip invincibleAudio;
 
         /// <summary>
         /// Max horizontal speed of the player.
@@ -50,6 +53,8 @@ namespace Platformer.Mechanics
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
         }
+
+        public bool IsInvincible { get; set; }
 
         protected override void Update()
         {
