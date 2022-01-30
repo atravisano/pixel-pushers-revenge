@@ -174,7 +174,6 @@ namespace Platformer.Mechanics
                         }
                         if (GetType() == typeof(PlayerController))
                         {
-                            Debug.Log("Hello");
                         }
                     }
 
