@@ -115,6 +115,20 @@ namespace Platformer.Mechanics
             {
                 model.player.gravityModifier *= card.massMultiplier;
             }
+
+            if (card.removeCards > 0)
+            {
+                for(var i = 0; i < card.removeCards; i++){
+                    CardMenu.instance.RemoveRandom();
+                }
+            }
+
+            if (card.addCards > 0)
+            {
+                for(var i = 0; i < card.addCards; i++){
+                    CardMenu.instance.AddCard(CardDeck.instance.DealCard());
+                }
+            }
         }
 
         public void PickCard()

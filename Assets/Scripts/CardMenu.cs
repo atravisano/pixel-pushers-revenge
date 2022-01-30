@@ -90,6 +90,14 @@ public class CardMenu : MonoBehaviour
         GameController.Instance.ApplyCard(card);
     }
 
+    public void RemoveRandom()
+    {
+        if(inventory.Count > 0){
+            int i = Random.Range(0, inventory.Count);
+            inventory.RemoveAt(i);
+        }
+    }
+
     public void ButtonEnter()
     {
         cardMenuOpen.transform.position = cardMenuOpen.transform.position + new Vector3(-5f, 0f, 0f);
