@@ -19,13 +19,14 @@ namespace Platformer.Mechanics
             var player = collider.gameObject.GetComponent<PlayerController>();
             var scoreManager = UnityEngine.Object.FindObjectOfType<ScoreManager>();
             var score = scoreManager.GetScore();
+            Debug.Log(score >= CoinsRequired);
             if (player != null && score >= CoinsRequired)
             {
                 // var ev = Schedule<PlayerEnteredVictoryZone>();
                 // ev.victoryZone = this;
                 var gameController = UnityEngine.Object.FindObjectOfType<GameController>();
                 scoreManager.RemoveScore(CoinsRequired);
-                SceneManager.LoadScene(1, LoadSceneMode.Single);
+                SceneManager.LoadScene(nextLevelName, LoadSceneMode.Single);
             }
             if (player != null && score < CoinsRequired)
             {
@@ -37,7 +38,7 @@ namespace Platformer.Mechanics
         private IEnumerator GameOver()
         {
             yield return new WaitForSeconds(0.25f);
-            SceneManager.LoadScene(nextLevelName);
+            SceneManager.LoadScene("RetryScreen");
         }
     }
 }
