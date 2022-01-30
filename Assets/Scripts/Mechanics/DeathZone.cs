@@ -18,7 +18,7 @@ namespace Platformer.Mechanics
 
         void OnTriggerStay2D(Collider2D collider)
         {
-            if (_stopWatch.ElapsedMilliseconds >= 500)
+            if (_stopWatch != null && _stopWatch.ElapsedMilliseconds >= 500)
             {
                 _stopWatch.Restart();
 
