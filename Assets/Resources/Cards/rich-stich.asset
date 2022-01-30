@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Rich Stitch
   positive: for sometime you gain in ritches
   negative: but you might obtain some stitches
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 4536efa88ed606a4aaa04e0e734eed30, type: 3}
   collectableMultiplier: 0
   collectableOverTime: 2
   collectableLoss: 0

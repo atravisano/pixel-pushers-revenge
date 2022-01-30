@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Pretend Friends
   positive: this card brings the end so close
   negative: then again, a friend is toast
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 4536efa88ed606a4aaa04e0e734eed30, type: 3}
   collectableMultiplier: 0
   collectableOverTime: 0
   collectableLoss: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Short Cohort
   positive: tell your friends come one, come all
   negative: lest of course your feeling small
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 4536efa88ed606a4aaa04e0e734eed30, type: 3}
   collectableMultiplier: 0
   collectableOverTime: 0
   collectableLoss: 0
