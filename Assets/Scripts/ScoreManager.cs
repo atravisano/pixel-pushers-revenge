@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
     private static int _score = 0;
     [SerializeField]
-    private Text _scoreText;
+    private TextMeshProUGUI _scoreText;
 
     // Start is called before the first frame update
     void Start()
