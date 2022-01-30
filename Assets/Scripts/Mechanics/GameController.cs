@@ -29,11 +29,12 @@ namespace Platformer.Mechanics
             Instance = this;
 
             // Temp code
+            /*
             Card[] cards = Resources.LoadAll<Card>("Cards");
 
             var card = cards.First(x => x.title == "No Pain, Low Gain");
 
-            ApplyCard(card);
+            ApplyCard(card);*/
         }
 
         void OnDisable()
