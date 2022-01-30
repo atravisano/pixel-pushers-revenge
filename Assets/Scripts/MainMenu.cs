@@ -17,15 +17,27 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame(){
-        StartCoroutine(FadeOut());
-        StartCoroutine(FadeAudio(backgroundAudio.GetComponent<AudioSource>(), 2f, 0f));
+        FadeToScene(1);
     }
 
     public void QuitGame(){
         Application.Quit();
     }
 
-    IEnumerator FadeOut(){
+    public void GoToMainMenu(){
+        FadeToScene(0);
+    }
+
+    public void RetryGame(){
+        FadeToScene(1);
+    }
+
+    void FadeToScene(int sceneIndex){
+        StartCoroutine(FadeOut(sceneIndex));
+        StartCoroutine(FadeAudio(backgroundAudio.GetComponent<AudioSource>(), 2f, 0f));
+    }
+
+    IEnumerator FadeOut(int sceneIndex){
         backgroundFader.SetActive(true);
         for(var i = 0; i <= 100; i++){
             yield return new WaitForSeconds(0.025f);
@@ -33,7 +45,7 @@ public class MainMenu : MonoBehaviour
             alpha = alpha > 1.0f ? 1.0f : alpha;
             backgroundFader.GetComponent<Image>().color = new Color(1f, 1f, 1f, alpha);
         }
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     IEnumerator FadeIn(){

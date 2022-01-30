@@ -974,7 +974,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 910028651}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1951,7 +1951,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 713772d8a3b5404498a76bb05f879e87, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.041
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2972,7 +2972,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsRequired: 40
-  GameOverScreen: {fileID: 1661013715}
 --- !u!212 &1216333465
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4029,7 +4028,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5833894e2899f1840ac04193ca462e39, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
