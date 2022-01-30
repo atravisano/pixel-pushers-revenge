@@ -786,7 +786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Looks like you did something wrong :(
+  m_text: You didn't collect enough stuff to pass!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb62ba8fce5e25e4aa7d9d25f04328a2, type: 2}
   m_sharedMaterial: {fileID: -587070378565196447, guid: cb62ba8fce5e25e4aa7d9d25f04328a2, type: 2}
