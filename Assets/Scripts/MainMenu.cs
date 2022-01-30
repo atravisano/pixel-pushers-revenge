@@ -42,6 +42,9 @@ public class MainMenu : MonoBehaviour
     }
 
     public void GoToMainMenu(){
+        CardMenu.instance.ResetInventory();
+        ScoreManager.Instance.ResetScore();
+        CardDeck.instance.ResetDeck();
         FadeToScene(0);
     }
 
