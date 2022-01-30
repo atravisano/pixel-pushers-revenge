@@ -158,12 +158,26 @@ namespace Platformer.Mechanics
                             velocity = velocity - projection * currentNormal;
                         }
                     }
-                    else
+                    // Hitting our head
+                    else if (currentNormal.x == 0.0)
                     {
                         //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
                         velocity.x *= 0;
                         velocity.y = Mathf.Min(velocity.y, 0);
                     }
+                    // Hitting a wall
+                    else
+                    {
+                        if (velocity.y > 0)
+                        {
+                            velocity.y *= 0.9f;
+                        }
+                        if (GetType() == typeof(PlayerController))
+                        {
+                            Debug.Log("Hello");
+                        }
+                    }
+
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;
                     distance = modifiedDistance < distance ? modifiedDistance : distance;
