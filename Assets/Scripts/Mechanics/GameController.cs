@@ -28,6 +28,15 @@ namespace Platformer.Mechanics
         {
             Instance = this;
 
+            var player = FindObjectOfType<PlayerController>();
+            if (player == null)
+            {
+                Debug.Log("Could not find the player");
+                return;
+            }
+
+            player.transform.position = model.spawnPoint.position;
+
             // Temp code
             /*
             Card[] cards = Resources.LoadAll<Card>("Cards");

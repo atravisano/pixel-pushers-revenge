@@ -47,6 +47,8 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
+            DontDestroyOnLoad(this);
+
             health = GetComponent<Health>();
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();

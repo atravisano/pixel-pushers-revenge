@@ -172,9 +172,6 @@ namespace Platformer.Mechanics
                         {
                             velocity.y *= 0.9f;
                         }
-                        if (GetType() == typeof(PlayerController))
-                        {
-                        }
                     }
 
                     //remove shellDistance from actual move distance.
