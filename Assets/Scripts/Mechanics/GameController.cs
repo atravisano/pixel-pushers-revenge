@@ -36,6 +36,7 @@ namespace Platformer.Mechanics
             }
 
             player.transform.position = model.spawnPoint.position;
+            model.player = player;
 
             // Temp code
             /*
