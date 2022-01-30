@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Platformer.Mechanics;
 using UnityEngine;
 
 public class CardDeck : MonoBehaviour
@@ -36,6 +37,8 @@ public class CardDeck : MonoBehaviour
         
         Debug.Log("Picked " + randomCard.name);
         Debug.Log(deck.Count);
+
+        GameController.Instance.ApplyCard(randomCard);
 
         return randomCard;
     }
