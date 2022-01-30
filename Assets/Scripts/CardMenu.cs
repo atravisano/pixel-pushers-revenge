@@ -26,6 +26,11 @@ public class CardMenu : MonoBehaviour
     {
     }
 
+    public void ResetInventory()
+    {
+        inventory = new List<Card>();
+    }
+
     public void OpenMenu()
     {
         Time.timeScale = 0;
