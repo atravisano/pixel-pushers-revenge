@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b7b8893929d4d9094f6655d580fae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinsRequired: 10
+  CoinsRequired: 60
   nextLevelName: 
 --- !u!61 &1110425180
 BoxCollider2D:
