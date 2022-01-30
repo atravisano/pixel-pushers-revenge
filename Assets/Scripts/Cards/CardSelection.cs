@@ -22,7 +22,6 @@ public class CardSelection : MonoBehaviour
         for (int i = 0; i < CardsToPickFrom; i++)
         {
             Card card = CardDeck.instance.DealCard();
-            Debug.Log(card.title);
 
             GameObject cardOption = Instantiate(CardPrefab, CardListElement);
             CardFlip cardFlipComponent = cardOption.GetComponentInChildren<CardFlip>();

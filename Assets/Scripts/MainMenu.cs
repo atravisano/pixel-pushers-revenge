@@ -29,6 +29,9 @@ public class MainMenu : MonoBehaviour
     }
 
     public void RetryGame(){
+        CardMenu.instance.ResetInventory();
+        ScoreManager.Instance.ResetScore();
+        CardDeck.instance.ResetDeck();
         FadeToScene(1);
     }
 

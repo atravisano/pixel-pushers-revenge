@@ -5,10 +5,15 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance { get; private set; }
+    public static ScoreManager Instance;
     private static int _score = 0;
     [SerializeField]
     private TextMeshProUGUI _scoreText;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
