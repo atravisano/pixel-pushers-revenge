@@ -59,9 +59,6 @@ public class CardMenu : MonoBehaviour
 
     void DisplayCard(GameObject newCard, Card card, CardFlip cardFlipComponent){
         cardFlipComponent.card = card;
-        cardFlipComponent.cardFace.GetComponent<Image>().sprite = card.image;
-        cardFlipComponent.positiveText = card.positive;
-        cardFlipComponent.negativeText = card.negative;
         cardFlipComponent.cardFace.SetActive(true);
         
         newCard.GetComponentInChildren<Button>().enabled = false;
