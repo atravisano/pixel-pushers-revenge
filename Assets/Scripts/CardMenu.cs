@@ -14,13 +14,12 @@ public class CardMenu : MonoBehaviour
 
     public GameObject cardPrefab;
 
-    private static List<Card> inventory;
+    private static List<Card> inventory = new List<Card>();
     public static CardMenu instance;
 
     void Awake()
     {
         instance = this;
-        inventory = new List<Card>();
     }
 
     void Start()
