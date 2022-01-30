@@ -1,4 +1,5 @@
 using System.Linq;
+using Cinemachine;
 using Platformer.Core;
 using Platformer.Gameplay;
 using Platformer.Model;
@@ -22,7 +23,12 @@ namespace Platformer.Mechanics
         //conveniently configured inside the inspector.
         public PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
-        public Transform CardPickerCanvas;
+        public CardSelection CardPicker;
+
+        void Awake()
+        {
+            DontDestroyOnLoad(this);
+        }
 
         void OnEnable()
         {
@@ -35,8 +41,39 @@ namespace Platformer.Mechanics
                 return;
             }
 
-            player.transform.position = model.spawnPoint.position;
             model.player = player;
+
+            var camera = FindObjectOfType<CinemachineVirtualCamera>();
+            if (camera != null)
+            {
+                model.virtualCamera = camera;
+            }
+            else
+            {
+                Debug.Log("Could not find camera");
+            }
+
+            var spawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+            if (spawnPoint != null)
+            {
+                model.spawnPoint = spawnPoint.transform;
+                player.transform.position = spawnPoint.transform.position;
+            }
+            else
+            {
+                Debug.Log("Cound not find spawn point");
+            }
+            
+            //var cardSelections = FindObjectsOfTypeAll(typeof(CardSelection));
+            //if (cardSelections != null && cardSelections.Last() > 0)
+            //{
+            //    CardPickerCanvas = cardSelections[0].transform;
+            //}
+            //else
+            //{
+            //    Debug.Log("Could not find the card selection canvas");
+            //}
+
 
             // Temp code
             /*
@@ -133,19 +170,19 @@ namespace Platformer.Mechanics
 
         public void PickCard()
         {
-            if (CardPickerCanvas)
+            if (CardPicker)
             {
                 PauseGame();
 
-                CardPickerCanvas.gameObject.SetActive(true);
+                CardPicker.showCardSelect();
             }
         }
 
         public void ClosePickCard()
         {
-            if (CardPickerCanvas)
+            if (CardPicker)
             {
-                CardPickerCanvas.gameObject.SetActive(false);
+                CardPicker.hideCardSelect();
 
                 ResumeGame();
             }

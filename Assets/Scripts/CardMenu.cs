@@ -87,6 +87,7 @@ public class CardMenu : MonoBehaviour
 
     public void AddCard(Card card)
     {
+        inventory.Add(card);
         GameController.Instance.ApplyCard(card);
     }
 

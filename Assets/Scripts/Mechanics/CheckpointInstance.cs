@@ -40,6 +40,11 @@ public class CheckpointInstance : MonoBehaviour
         if (player != null) OnPlayerEnter(player);
     }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        collected = true;
+    }
+
     void OnPlayerEnter(PlayerController player)
     {
         if (collected) return;

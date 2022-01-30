@@ -10,11 +10,9 @@ public class CardSelection : MonoBehaviour
     public int CardsToPickFrom;
     public Transform CardListElement;
 
-    private bool used = false;
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        DontDestroyOnLoad(this);
     }
 
     private void DrawCards()
@@ -37,27 +35,15 @@ public class CardSelection : MonoBehaviour
         }
     }
 
-    void OnEnable()
+    public void showCardSelect()
     {
-        if (used)
-        {
-            gameObject.SetActive(false);
-            GameController.Instance.ClosePickCard();
-            return;
-        }
-
+        CardListElement.gameObject.SetActive(true);
         DrawCards();
-        used = true;
     }
 
-    private void OnDisable()
+    public void hideCardSelect()
     {
         ResetCards();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        CardListElement.gameObject.SetActive(false);
     }
 }

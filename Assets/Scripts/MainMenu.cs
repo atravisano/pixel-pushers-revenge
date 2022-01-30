@@ -13,12 +13,16 @@ public class MainMenu : MonoBehaviour
     void OnEnable()
     {
         var player = FindObjectOfType<PlayerController>();
-        if (player == null)
+        if (player != null)
         {
-            return;
+            Destroy(player.gameObject);
         }
 
-        Destroy(player.gameObject);
+        var gameController = FindObjectOfType<GameController>();
+        if (gameController != null)
+        {
+            Destroy(gameController.gameObject);
+        }
     }
 
     void Start(){
