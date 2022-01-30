@@ -44,7 +44,7 @@ namespace Platformer.Gameplay
                     player.Bounce(2);
                 }
             }
-            else
+            else if (!player.IsInvincible)
             {
                 Schedule<PlayerDeath>();
             }

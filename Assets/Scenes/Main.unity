@@ -1750,6 +1750,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e683d74f8789746a35dfe738d89877, type: 3}
+--- !u!224 &803183226 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1861783863550322801, guid: 71557a931de9e1d41a7350bef936c1e0, type: 3}
+  m_PrefabInstance: {fileID: 207386229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &847815959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,6 +3315,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1098170504627422961, guid: e4e683d74f8789746a35dfe738d89877, type: 3}
   m_PrefabInstance: {fileID: 737858377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1530280630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1861783862865860132, guid: 71557a931de9e1d41a7350bef936c1e0, type: 3}
+  m_PrefabInstance: {fileID: 207386229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1530280631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530280630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a86e2c53574fb418fc185895086fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardPrefab: {fileID: 5125755350170057006, guid: 9465cbe3b39343d4db3babf54600aedf, type: 3}
+  CardsToPickFrom: 3
+  CardListElement: {fileID: 803183226}
 --- !u!1 &1661013715
 GameObject:
   m_ObjectHideFlags: 0

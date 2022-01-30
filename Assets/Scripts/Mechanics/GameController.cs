@@ -1,4 +1,6 @@
+using System.Linq;
 using Platformer.Core;
+using Platformer.Gameplay;
 using Platformer.Model;
 using UnityEngine;
 
@@ -25,6 +27,13 @@ namespace Platformer.Mechanics
         void OnEnable()
         {
             Instance = this;
+
+            // Temp code
+            Card[] cards = Resources.LoadAll<Card>("Cards");
+
+            var card = cards.First(x => x.title == "No Pain, Low Gain");
+
+            ApplyCard(card);
         }
 
         void OnDisable()
@@ -35,6 +44,17 @@ namespace Platformer.Mechanics
         void Update()
         {
             if (Instance == this) Simulation.Tick();
+        }
+
+        public void ApplyCard(Card card)
+        {
+            Debug.Log($"Card \"{card.title}\" applied");
+
+            if (card.invincibilityTime > 0)
+            {
+                var pi = Simulation.Schedule<PlayerInvincibility>();
+                pi.InvincibilityTime = card.invincibilityTime;
+            }
         }
 
         public void PickCard()
