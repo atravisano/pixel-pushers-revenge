@@ -472,6 +472,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &173619941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1098170504627422965, guid: e4e683d74f8789746a35dfe738d89877, type: 3}
+  m_PrefabInstance: {fileID: 737858377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709ee11994a2f44658e5fc9887c45081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &193298764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,9 +4011,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model:
-    virtualCamera: {fileID: 0}
-    player: {fileID: 0}
-    spawnPoint: {fileID: 0}
+    virtualCamera: {fileID: 2092336375}
+    player: {fileID: 173619941}
+    spawnPoint: {fileID: 1957052666}
     jumpModifier: 1.5
     jumpDeceleration: 0.5
   CardPickerCanvas: {fileID: 207386230}
