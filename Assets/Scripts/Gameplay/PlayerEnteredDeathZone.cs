@@ -12,11 +12,21 @@ namespace Platformer.Gameplay
     {
         public DeathZone deathzone;
 
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
         public override void Execute()
         {
-            Simulation.Schedule<PlayerDeath>(0);
+            var player = GameController.Instance.model.player;
+
+            if (!player.IsInvincible)
+            {
+                player.animator.SetTrigger("hurt");
+
+                player.health.Decrement();
+            }
+
+            if (!player.health.IsAlive)
+            {
+                Simulation.Schedule<PlayerDeath>(0);
+            }
         }
     }
 }
