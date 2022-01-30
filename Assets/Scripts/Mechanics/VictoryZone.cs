@@ -25,7 +25,7 @@ namespace Platformer.Mechanics
                 // ev.victoryZone = this;
                 var gameController = UnityEngine.Object.FindObjectOfType<GameController>();
                 scoreManager.RemoveScore(CoinsRequired);
-                SceneManager.LoadScene(1, LoadSceneMode.Single);
+                SceneManager.LoadScene(nextLevelName, LoadSceneMode.Single);
             }
             if (player != null && score < CoinsRequired)
             {
@@ -37,7 +37,7 @@ namespace Platformer.Mechanics
         private IEnumerator GameOver()
         {
             yield return new WaitForSeconds(0.25f);
-            SceneManager.LoadScene(nextLevelName);
+            SceneManager.LoadScene("Tutorial");
         }
     }
 }
