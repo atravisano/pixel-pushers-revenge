@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsRequired: 10
-  nextLevelName: WinScreen
+  nextLevelName: Level 1
 --- !u!61 &635941319
 BoxCollider2D:
   m_ObjectHideFlags: 0
