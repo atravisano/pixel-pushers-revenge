@@ -47,6 +47,7 @@ namespace Platformer.Gameplay
             else if (!player.IsInvincible)
             {
                 player.health.Decrement();
+                player.animator.SetTrigger("hurt");
 
                 if (!player.health.IsAlive)
                 {
