@@ -982,22 +982,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1359580562932419825, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
-      propertyPath: m_Pivot.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359580562932419825, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359580562932419825, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359580562932419825, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1359580562935019552, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1085,10 +1069,6 @@ PrefabInstance:
     - target: {fileID: 1359580562935019564, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
       propertyPath: m_Name
       value: CardMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359580564020554342, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a27420cdd3d03a7408623ba510d8b3ed, type: 3}
