@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Dense Expense
   positive: a rise in wealth would sure be great
   negative: and hopefully, it's worth the weight
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 4536efa88ed606a4aaa04e0e734eed30, type: 3}
   collectableMultiplier: 0
   collectableOverTime: 0
   collectableLoss: 0

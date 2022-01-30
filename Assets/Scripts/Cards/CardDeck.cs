@@ -8,7 +8,8 @@ public class CardDeck : MonoBehaviour
     public static CardDeck instance;
 
     private static bool filledDeck = false;
-    private static List<Card> deck = new List<Card>();
+
+    public static List<Card> deck = new List<Card>();
 
     void Awake()
     {
@@ -19,7 +20,12 @@ public class CardDeck : MonoBehaviour
         }
 
         instance = this;
-        Debug.Log("Deck Count: " + deck.Count);
+    }
+
+    public void ResetDeck()
+    {
+        deck = new List<Card>();
+        FillDeck();
     }
 
     private static void FillDeck()
@@ -43,9 +49,6 @@ public class CardDeck : MonoBehaviour
         Card randomCard = deck[i];
         deck.RemoveAt(i);
         
-        Debug.Log("Picked " + randomCard.name);
-        Debug.Log(deck.Count);
-
         return randomCard;
     }
 

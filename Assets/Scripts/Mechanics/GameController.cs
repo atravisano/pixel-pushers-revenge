@@ -66,6 +66,45 @@ namespace Platformer.Mechanics
             {
                 model.player.maxSpeed = card.speedMultiplier * model.player.maxSpeed;
             }
+            
+            if (card.DmgOverTime > 0)
+            {
+                //model.player.maxSpeed = card.speedMultiplier * model.player.maxSpeed;
+            }
+
+            if (card.sizeMultiplier > 0)
+            {
+                model.player.transform.localScale *= card.sizeMultiplier;
+            }
+
+            if (card.collectableGain > 0)
+            {
+                var scoreManager = FindObjectOfType<ScoreManager>();
+                scoreManager.AddScore((int)card.collectableGain);
+            }
+
+            if (card.collectableLoss > 0)
+            {
+                var scoreManager = FindObjectOfType<ScoreManager>();
+                scoreManager.RemoveScore((int)card.collectableLoss);
+            }
+
+            if (card.collectableMultiplier > 0)
+            {
+                var scoreManager = FindObjectOfType<ScoreManager>();
+                scoreManager.SetScore(scoreManager.GetScore() * (int)card.collectableMultiplier);
+            }
+
+            if (card.collectableOverTime > 0)
+            {
+                var pi = Simulation.Schedule<PlayerCollectableOverTime>(PlayerCollectableOverTime.TimeBetweenCollects);
+                pi.CollectableOverTime = card.collectableOverTime;
+            }
+
+            if (card.massMultiplier > 0)
+            {
+                model.player.gravityModifier *= card.massMultiplier;
+            }
         }
 
         public void PickCard()

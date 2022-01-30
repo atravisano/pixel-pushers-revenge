@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Sweet Retreat
   positive: A bump in wealth indeed is nice
   negative: of course a friend must pay the price
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 4536efa88ed606a4aaa04e0e734eed30, type: 3}
   collectableMultiplier: 0
   collectableOverTime: 0
   collectableLoss: 0
