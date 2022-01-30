@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using Platformer.Mechanics;
 
 public class CardMenu : MonoBehaviour
 {
@@ -78,6 +79,8 @@ public class CardMenu : MonoBehaviour
     public void AddCard(Card card)
     {
         inventory.Add(card);
+
+        GameController.Instance.ApplyCard(card);
     }
 
     public void ButtonEnter()

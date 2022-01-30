@@ -42,6 +42,7 @@ public class CardFlip : MonoBehaviour
         if (cardFaceIsActive)
         {
             CardMenu.instance.AddCard(card);
+
             GameController.Instance.ClosePickCard();
         }
         else

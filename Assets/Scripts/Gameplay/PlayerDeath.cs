@@ -17,7 +17,7 @@ namespace Platformer.Gameplay
         public override void Execute()
         {
             var player = model.player;
-            if (player.health.IsAlive)
+            if (player && player.health && player.health.IsAlive)
             {
                 var scoreManager = UnityEngine.Object.FindObjectOfType<ScoreManager>();
                 scoreManager.ResetScore();
