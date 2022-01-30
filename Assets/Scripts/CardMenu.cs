@@ -39,6 +39,7 @@ public class CardMenu : MonoBehaviour
         cardMenuOpen.SetActive(false);
         cardMenuClose.SetActive(true);
         ShowCards();
+        ButtonExit();
     }
 
     void CloseMenu(){
@@ -46,6 +47,7 @@ public class CardMenu : MonoBehaviour
         cardMenuBackground.SetActive(false);
         cardMenuOpen.SetActive(true);
         cardMenuClose.SetActive(false);
+        ButtonExit();
     }
 
     void ShowCards(){
@@ -60,7 +62,7 @@ public class CardMenu : MonoBehaviour
     void DisplayCard(GameObject newCard, Card card, CardFlip cardFlipComponent){
         cardFlipComponent.card = card;
         cardFlipComponent.cardFace.SetActive(true);
-        
+
         newCard.GetComponentInChildren<Button>().enabled = false;
         newCard.GetComponentInChildren<Image>().enabled = false;
         newCard.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
@@ -77,20 +79,22 @@ public class CardMenu : MonoBehaviour
     void AddPlaceholderCards(){
         Card[] cards = Resources.LoadAll<Card>("Cards");
         inventory.Add(cards[0]);
-        inventory.Add(cards[1]);
-        inventory.Add(cards[2]);
-        inventory.Add(cards[3]);
-        inventory.Add(cards[4]);
-        inventory.Add(cards[5]);
-        inventory.Add(cards[6]);
-        inventory.Add(cards[7]);
+        inventory[0].positive = "Whoever left this placeholder here...";
+        inventory[0].negative = "Your mom's a hoe!";
     }
 
     public void AddCard(Card card){
         inventory.Add(card);
     }
 
+    public void ButtonEnter(){
+        cardMenuOpen.transform.position = cardMenuOpen.transform.position + new Vector3(-5f, 0f, 0f);
+        cardMenuClose.transform.position = cardMenuClose.transform.position + new Vector3(-5f, 0f, 0f);
+    }
 
-
+    public void ButtonExit(){
+        cardMenuOpen.transform.position = cardMenuOpen.transform.position + new Vector3(5f, 0f, 0f);
+        cardMenuClose.transform.position = cardMenuClose.transform.position + new Vector3(5f, 0f, 0f);
+    }
 
 }
