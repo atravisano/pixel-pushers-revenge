@@ -1820,6 +1820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsRequired: 40
+  nextLevelName: Level 1
 --- !u!61 &635941319
 BoxCollider2D:
   m_ObjectHideFlags: 0
