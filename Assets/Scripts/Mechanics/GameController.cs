@@ -30,7 +30,12 @@ namespace Platformer.Mechanics
             DontDestroyOnLoad(this);
         }
 
-        void OnEnable()
+        private void OnEnable()
+        {
+            InitializeNewLevel();
+        }
+
+        public void InitializeNewLevel()
         {
             Instance = this;
 
