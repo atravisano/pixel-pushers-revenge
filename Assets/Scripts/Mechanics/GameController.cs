@@ -74,7 +74,7 @@ namespace Platformer.Mechanics
 
             if (card.sizeMultiplier > 0)
             {
-                model.player.transform.localScale.Scale(new Vector3(1, card.sizeMultiplier, 1));
+                model.player.transform.localScale *= card.sizeMultiplier;
             }
 
             if (card.collectableGain > 0)
@@ -99,6 +99,11 @@ namespace Platformer.Mechanics
             {
                 var pi = Simulation.Schedule<PlayerCollectableOverTime>(PlayerCollectableOverTime.TimeBetweenCollects);
                 pi.CollectableOverTime = card.collectableOverTime;
+            }
+
+            if (card.massMultiplier > 0)
+            {
+                model.player.gravityModifier *= card.massMultiplier;
             }
         }
 
