@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,7 @@ public class ScoreManager : MonoBehaviour
 
     public void RemoveScore(int score)
     {
-        _score -= score;
+        _score -= Math.Max(_score - score, 0);
     }
 
     public void UpdateScoreText()
