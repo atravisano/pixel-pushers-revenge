@@ -2971,7 +2971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b7b8893929d4d9094f6655d580fae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinsRequired: 40
+  CoinsRequired: 20
   GameOverScreen: {fileID: 1661013715}
 --- !u!212 &1216333465
 SpriteRenderer:
