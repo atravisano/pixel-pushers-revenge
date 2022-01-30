@@ -36,7 +36,7 @@ namespace Platformer.Mechanics
         private IEnumerator GameOver()
         {
             yield return new WaitForSeconds(0.25f);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
     }
 }
