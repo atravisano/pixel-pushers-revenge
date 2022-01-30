@@ -29,8 +29,6 @@ public class CardMenu : MonoBehaviour
 
         cardMenuBackground.SetActive(false);
         cardMenuClose.SetActive(false);
-
-        AddPlaceholderCards(); // REMOVE ME
     }
 
     void OpenMenu(){
@@ -73,14 +71,6 @@ public class CardMenu : MonoBehaviour
         foreach (Transform child in cardHolder.transform) {
             GameObject.Destroy(child.gameObject);
         }
-    }
-
-    //REMPOVE ME (AddPlaceholderCards)
-    void AddPlaceholderCards(){
-        Card[] cards = Resources.LoadAll<Card>("Cards");
-        inventory.Add(cards[0]);
-        inventory[0].positive = "Whoever left this placeholder here...";
-        inventory[0].negative = "Your mom's a hoe!";
     }
 
     public void AddCard(Card card){
